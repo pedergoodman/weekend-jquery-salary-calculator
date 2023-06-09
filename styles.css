@@ -1,0 +1,54 @@
+/* GLOBAL */
+
+
+/* HEADER / FOOTER */
+
+
+/* FORM ELEMENTS */
+form {
+    width: 90%;
+    margin: auto;
+}
+
+/* TABLE ELEMENTS */
+
+table {
+    width: 90%;
+    text-align: left;
+    margin: auto;
+    margin-top: 50px;
+    /* border-radius: 25px; */
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 1em;
+}
+
+td {
+    padding: 1.5em;
+}
+
+th {
+    text-align: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+thead {
+    background: grey;
+    color: aquamarine;
+}
+
+tbody tr:nth-child(odd) {
+    background: lightcoral;
+}
+tbody tr:nth-child(even) {
+    background: lightblue;
+}
+
+td button {
+    display: inline-block;
+    text-align: center;
+}

@@ -2,7 +2,7 @@
 
 **Required**
 - Take in information from a form
-- save that info to a database
+- (do i need to save it to a database?) save that info to a database
 - calculate monthly costs for employees
 - If total monthly cost exceeds $20,000, add a red background color to the total monthly cost
 - append info to the DOM
