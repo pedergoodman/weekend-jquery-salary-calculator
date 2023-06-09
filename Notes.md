@@ -14,6 +14,8 @@
 add extra styling or functionality
 -- on empty form flash the fields to submit something
 -- individual empty fields flash?
+-- over 20K flashes red and settles to a lighter red
+-- add comma and $ in salary??
 
 ## **Thinking Through**
 
