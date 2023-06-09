@@ -14,6 +14,7 @@ function onReady() {
         // take each form input 
         // store in variable
         // write and append to table element
+        // send off numbers to math function
         // clear form
 function addEmployee(event) {
     // event prevent
@@ -31,5 +32,8 @@ function addEmployee(event) {
     console.log('employeeIdValue is:', employeeIdValue);
     console.log('jobTitleValue is:', jobTitleValue);
     console.log('annualSalaryValue is:', annualSalaryValue);
+
+
+    
 }
 
