@@ -4,14 +4,13 @@ let totalAnnualSalary = 0;
 let totalMonthlySalary = 0;
 
 function onReady() {
-  console.log("hey js & jQ");
+  //   console.log("hey js & jQ");
 
   // Listener for submit button
   $("#submit-button").on("click", addEmployee);
 
   // delegated listener for delete button
   $("#table-body").on("click", ".delete", deleteEmployee);
-
 }
 
 // Event handler for Submit button
@@ -35,11 +34,11 @@ function addEmployee(event) {
   let annualSalaryValue = +$("#input-salary").val();
 
   // Grab Value Tests
-  console.log("firstNameValue is:", firstNameValue);
-  console.log("lastNameValue is:", lastNameValue);
-  console.log("employeeIdValue is:", employeeIdValue);
-  console.log("jobTitleValue is:", jobTitleValue);
-  console.log("annualSalaryValue is:", annualSalaryValue);
+  //   console.log("firstNameValue is:", firstNameValue);
+  //   console.log("lastNameValue is:", lastNameValue);
+  //   console.log("employeeIdValue is:", employeeIdValue);
+  //   console.log("jobTitleValue is:", jobTitleValue);
+  //   console.log("annualSalaryValue is:", annualSalaryValue);
 
   $("#table-body").append(`
     <tr>
@@ -47,11 +46,13 @@ function addEmployee(event) {
     <td>${lastNameValue}</td>
     <td>${employeeIdValue}</td>
     <td>${jobTitleValue}</td>
-    <td class="table-salary">$${annualSalaryValue.toLocaleString("en-US")}</td>
+    <td>$<span class="table-salary">${annualSalaryValue.toLocaleString(
+      "en-US"
+    )}</span></td>
     <td><button class="delete">Delete</button></td>
     </tr>
     `);
-    // for got to add the class here for my testing....
+  // for got to add the class here for my testing....
   // store data
 
   addToMonthly(annualSalaryValue);
@@ -67,10 +68,16 @@ function addEmployee(event) {
 function deleteEmployee() {
   console.log("inside deleteEmployee");
 
-  let testVal = +$(this).closest("tr").children(".table-salary").text()
-  console.log(testVal);
+  let testVal = $(this).closest("tr").find(".table-salary").text();
 
-  // removeFromMonthly(.toLocaleNumber())
+  testVal = parseFloat(testVal.replace(/\,/g, ""));
+  console.log(testVal);
+  // trying to understand what's happening with replace
+  // because it looks funny even though it works
+  // "/" to select a character, "\," excape to get a comma,
+  // " /g, '' " to set to global change and what to change to
+
+  removeFromMonthly(testVal);
 
   $(this).closest("tr").remove();
 
@@ -81,17 +88,18 @@ function deleteEmployee() {
   // console.log(value);
 } // end deleteEmployee
 
-// CALC for Monthly cost
+// CALC for Monthly cost, input pulled from form
 function addToMonthly(salaryInput) {
-  // take salary input
-  console.log("in addToMonthly, value passed is", salaryInput);
-  // store in some variables
-  totalAnnualSalary += salaryInput;
-  // calculate total monthly
-  totalMonthlySalary = totalAnnualSalary / 12;
-  // Tests math
-  // console.log('totalAnnualSalary', totalAnnualSalary);
-  // console.log('totalMonthlySalary', totalMonthlySalary);
+    
+    // store in some variables
+    totalAnnualSalary += salaryInput;
+    // calculate total monthly
+    totalMonthlySalary = totalAnnualSalary / 12;
+    
+    // Tests 
+    //console.log("addToMonthly, value passed:", salaryInput);
+    // console.log('totalAnnualSalary', totalAnnualSalary);
+    // console.log('totalMonthlySalary', totalMonthlySalary);
 
   // append to DOM
   $("#monthly-cost").text(totalMonthlySalary.toLocaleString("en-US"));
@@ -107,7 +115,7 @@ function removeFromMonthly(removedSalary) {
   totalAnnualSalary -= removedSalary;
   // calculate new total monthly
   totalMonthlySalary = totalAnnualSalary / 12;
-  // Tests math
+  // Tests
   console.log("totalAnnualSalary", totalAnnualSalary);
   console.log("totalMonthlySalary", totalMonthlySalary);
   $("#monthly-cost").text(totalMonthlySalary.toLocaleString("en-US"));
@@ -116,12 +124,14 @@ function removeFromMonthly(removedSalary) {
   totalMonthlyBackground();
 } // end removeFromMonthly
 
-  // checks if totalMonthlySalary > 20K
+// checks if totalMonthlySalary > 20K
 function totalMonthlyBackground() {
-  if (totalMonthlySalary > 20000) { // if greater than 20K, highlight red
+  if (totalMonthlySalary > 20000) {
+    // if greater than 20K, highlight red
+    console.log('changed bg to "red"');
     $("#monthly-cost").parent().css("background", "red");
   } else {
-    $("#monthly-cost").parent().css("background", "default");
+    console.log('changed bg to "green"');
+    $("#monthly-cost").parent().css("background", "green");
   }
 } // end totalMonthlyBackground
-
