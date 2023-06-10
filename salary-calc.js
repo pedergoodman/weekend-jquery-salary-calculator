@@ -47,11 +47,11 @@ function addEmployee(event) {
     <td>${lastNameValue}</td>
     <td>${employeeIdValue}</td>
     <td>${jobTitleValue}</td>
-    <td>$${annualSalaryValue.toLocaleString("en-US")}</td>
+    <td class="table-salary">$${annualSalaryValue.toLocaleString("en-US")}</td>
     <td><button class="delete">Delete</button></td>
     </tr>
     `);
-
+    // for got to add the class here for my testing....
   // store data
 
   addToMonthly(annualSalaryValue);
@@ -67,7 +67,7 @@ function addEmployee(event) {
 function deleteEmployee() {
   console.log("inside deleteEmployee");
 
-  let testVal = $(this).closest("tr").get();
+  let testVal = +$(this).closest("tr").children(".table-salary").text()
   console.log(testVal);
 
   // removeFromMonthly(.toLocaleNumber())
@@ -116,14 +116,12 @@ function removeFromMonthly(removedSalary) {
   totalMonthlyBackground();
 } // end removeFromMonthly
 
+  // checks if totalMonthlySalary > 20K
 function totalMonthlyBackground() {
-  if (totalMonthlySalary > 20000) {
+  if (totalMonthlySalary > 20000) { // if greater than 20K, highlight red
     $("#monthly-cost").parent().css("background", "red");
   } else {
     $("#monthly-cost").parent().css("background", "default");
   }
 } // end totalMonthlyBackground
 
-// while (totalMonthlySalary < 20000) {
-//     $('#monthly-cost').css("background-color", "red")
-// }

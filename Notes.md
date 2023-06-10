@@ -80,3 +80,12 @@ output array section
 - 6 x n
 
 ?footer to display monthly total, or dynamically below the array
+
+
+
+
+# Things to wrap up
+
+
+
+
