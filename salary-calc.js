@@ -57,12 +57,10 @@ function addEmployee(event) {
     </tr>
     `)
     
+    // store data 
     
+
     addToMonthly(annualSalaryValue);
-    
-    
-    
-    
     
     //clear form
     $('#input-first-name').val('')
@@ -76,7 +74,7 @@ function addEmployee(event) {
 function deleteEmployee() {
     console.log('inside deleteEmployee');
 
-    let testVal = $(this).closest('.table-salary')
+    let testVal = $(this).closest('tr').get()
     console.log(testVal);
 
 
@@ -108,9 +106,15 @@ function addToMonthly(salaryInput) {
     
     // append to DOM
     $('#monthly-cost').text(totalMonthlySalary.toLocaleString("en-US"))
+
+    if (totalMonthlySalary > 20000) {
+        $('#monthly-cost').parent().css("background", "red")
+    } else {
+        $('#monthly-cost').parent().css("background", "default")
+    }
 }
 
-// needs connection
+// needs connection --> removedSalary = Annual Salary data
 function removeFromMonthly(removedSalary) {
     console.log('in removeFromMonthly, value passed is:', removedSalary);
     // update variables
@@ -121,4 +125,16 @@ function removeFromMonthly(removedSalary) {
     console.log('totalAnnualSalary', totalAnnualSalary);
     console.log('totalMonthlySalary', totalMonthlySalary);
     $('#monthly-cost').text(totalMonthlySalary.toLocaleString("en-US"))
+
+    if (totalMonthlySalary > 20000) {
+        $('#monthly-cost').parent().css("background", "red")
+    } else {
+        $('#monthly-cost').parent().css("background", "default")
+    }
+
 }
+
+
+// while (totalMonthlySalary < 20000) {
+//     $('#monthly-cost').css("background-color", "red")
+// }
