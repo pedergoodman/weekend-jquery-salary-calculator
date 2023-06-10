@@ -1,14 +1,73 @@
+
+/* Colors
+--text: #160718; (black)
+--background: #f7e7f8; (pinkish grey)
+--primary-button: #e2dd9d; (pastel greenish-yellow)
+--secondary-button: #f0d4f2; (pastel pink)
+--accent: #4ecac2; (darkish teal)
+-- lighter accent (
+*/
+
+
+
 /* GLOBAL */
 
+body {
+    background-color: #f7e7f8;
+    color: #160718;
+}
+
+h3 {
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
 
 /* HEADER / FOOTER */
 
 
 /* FORM ELEMENTS */
+div, h3 {
+    display: inline-block;
+}
+
+form span {
+    display: inline-block;
+    border: 15px solid black;
+
+}
+
+#monthly-title {
+    display: inline-block;
+    position: relative;
+    float: right;
+    text-align: left;
+}
+
 form {
     width: 90%;
     margin: auto;
+    margin-bottom: 20px;
+    
 }
+
+input {
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#submit-button {
+    background-color: #4ecac2;
+    border-radius: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
 
 /* TABLE ELEMENTS */
 
@@ -16,7 +75,7 @@ table {
     width: 90%;
     text-align: left;
     margin: auto;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     /* border-radius: 25px; */
 }
 
@@ -37,18 +96,23 @@ th {
 }
 
 thead {
-    background: grey;
-    color: aquamarine;
+    background: #4ecac2;
 }
 
 tbody tr:nth-child(odd) {
-    background: lightcoral;
+    background: #ece9c1;
 }
 tbody tr:nth-child(even) {
     background: lightblue;
 }
 
 td button {
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: inline-block;
     text-align: center;
+    background-color: #f0d4f2;
 }

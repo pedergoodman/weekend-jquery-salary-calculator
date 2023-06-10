@@ -53,7 +53,7 @@ function addEmployee(event) {
     </tr>
     `);
   // for got to add the class here for my testing....
-  
+
   // store data??
   addToMonthly(annualSalaryValue);
 
@@ -90,16 +90,15 @@ function deleteEmployee() {
 
 // CALC for Monthly cost, input pulled from form
 function addToMonthly(salaryInput) {
-    
-    // store in some variables
-    totalAnnualSalary += salaryInput;
-    // calculate total monthly
-    totalMonthlySalary = totalAnnualSalary / 12;
-    
-    // Tests 
-    //console.log("addToMonthly, value passed:", salaryInput);
-    // console.log('totalAnnualSalary', totalAnnualSalary);
-    // console.log('totalMonthlySalary', totalMonthlySalary);
+  // store in some variables
+  totalAnnualSalary += salaryInput;
+  // calculate total monthly
+  totalMonthlySalary = totalAnnualSalary / 12;
+
+  // Tests
+  //console.log("addToMonthly, value passed:", salaryInput);
+  // console.log('totalAnnualSalary', totalAnnualSalary);
+  // console.log('totalMonthlySalary', totalMonthlySalary);
 
   // append to DOM
   $("#monthly-cost").text(totalMonthlySalary.toLocaleString("en-US"));

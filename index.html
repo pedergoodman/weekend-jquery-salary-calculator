@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="jquery-3.7.0.js"></script>
     <script src="salary-calc.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Salary Calculator</h1>
@@ -15,41 +17,31 @@
     <main>
         <!-- Input Form -->
         <section>
+            <h3 class="block-title">Add Employees</h3>
             <form>
-                <input 
-                placeholder="First Name"
-                type="text"
-                id="input-first-name">
-                <input 
-                placeholder="Last Name"
-                type="text"
-                id="input-last-name">
-                <input 
-                placeholder="ID"
-                type="number"
-                id="input-employee-id">
-                <input 
-                placeholder="Job Title"
-                type="text"
-                id="input-job-title">
-                <input 
-                placeholder="Salary"
-                type="number"
-                id="input-salary">
-                <button id="submit-button">Submit</button>
+                <span class="input-grouping">
+                    <input placeholder="First Name" type="text" id="input-first-name">
+                    <input placeholder="Last Name" type="text" id="input-last-name">
+                    <input placeholder="ID" type="number" id="input-employee-id">
+                </span>
+                <span class="input-grouping">
+                    <input placeholder="Job Title" type="text" id="input-job-title">
+                    <input placeholder="Salary" type="number" id="input-salary">
+                    <button id="submit-button">Submit</button>
+                </span>
             </form>
         </section>
         <!-- container for $$$/month output -->
         <section>
             <div>
-                <h3>Employees</h3>
-                <h3>Total Monthly: <span>$<span id="monthly-cost">0</span></span></h3>
+                <h3 class="block-title">Employees</h3>
+                <h3 id="monthly-title">Total Monthly: <span>$<span id="monthly-cost">0</span></span></h3>
             </div>
         </section>
 
         <!-- Output to table  -->
         <section>
-        
+
             <table>
                 <thead>
                     <tr>
@@ -58,11 +50,11 @@
                         <th>Employee ID</th>
                         <th>Job Title</th>
                         <th>Annual Salary</th>
-                        <td>Delete</td>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody id="table-body">
-                  <!--   <tr>
+                      <tr>
                         <td class="first-name">Peder</td>
                         <td class="table-last-name">Goodman</td>
                         <td>2003</td>
@@ -85,7 +77,7 @@
                         <td>Super Human</td>
                         <td>$<span class="table-salary">1,000,000</span></td>
                         <td><button class="delete">Delete</button></td>
-                    </tr> -->
+                    </tr>
                 </tbody>
             </table>
         </section>
@@ -94,4 +86,5 @@
 
     </footer>
 </body>
+
 </html>
