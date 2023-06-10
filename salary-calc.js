@@ -53,8 +53,8 @@ function addEmployee(event) {
     </tr>
     `);
   // for got to add the class here for my testing....
-  // store data
-
+  
+  // store data??
   addToMonthly(annualSalaryValue);
 
   //clear form
