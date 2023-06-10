@@ -24,29 +24,46 @@ function addEmployee(event) {
     event.preventDefault();
     // console.log("inside addEmployee");
     // capture form data
+
     let firstNameValue = $('#input-first-name').val()
     let lastNameValue = $('#input-last-name').val()
     let employeeIdValue = $('#input-employee-id').val()
     let jobTitleValue = $('#input-job-title').val()
     let annualSalaryValue = $('#input-salary').val()
 
-    console.log('firstNameValue is:', firstNameValue);
-    console.log('lastNameValue is:', lastNameValue);
-    console.log('employeeIdValue is:', employeeIdValue);
-    console.log('jobTitleValue is:', jobTitleValue);
-    console.log('annualSalaryValue is:', annualSalaryValue);
+// Grab Value Tests
+    // console.log('firstNameValue is:', firstNameValue);
+    // console.log('lastNameValue is:', lastNameValue);
+    // console.log('employeeIdValue is:', employeeIdValue);
+    // console.log('jobTitleValue is:', jobTitleValue);
+    // console.log('annualSalaryValue is:', annualSalaryValue);
 
-    // todo
+
+
+
+// todo
     // send values to array
+    //clear form
+
+$('#input-first-name').val('')
+$('#input-last-name').val('')
+$('#input-employee-id').val('')
+$('#input-job-title').val('')
+$('#input-salary').val('')
 
 }
 
 function deleteEmployee() {
     console.log('inside deleteEmployee');
 
+    let value = $(this).closest('tr').remove()
+
+
+
     // I want to grab the employee id? 
-
-
+        // save for later
+        // let value = $(this).parent().parent()
+        // console.log(value);
 
 
 }
