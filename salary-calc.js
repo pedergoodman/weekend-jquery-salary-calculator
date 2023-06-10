@@ -2,9 +2,12 @@ $(document).ready(onReady)
 
 function onReady() {
     console.log('hey js & jQ');
-    $('#submit-button').on('click', addEmployee)
-    // Listener for submit button
 
+    // Listener for submit button
+    $('#submit-button').on('click', addEmployee)
+
+    // delegated listener for delete button
+    $('#table-body').on('click', '.delete', deleteEmployee)
 }
 
 
@@ -33,7 +36,21 @@ function addEmployee(event) {
     console.log('jobTitleValue is:', jobTitleValue);
     console.log('annualSalaryValue is:', annualSalaryValue);
 
+    // todo
+    // send values to array
 
-    
 }
 
+function deleteEmployee() {
+    console.log('inside deleteEmployee');
+
+    // I want to grab the employee id? 
+
+
+
+
+}
+
+
+
+// 
