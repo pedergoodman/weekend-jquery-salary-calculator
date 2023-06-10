@@ -79,6 +79,9 @@ function deleteEmployee() {
     let testVal = $(this).closest('.table-salary')
     console.log(testVal);
 
+
+    // removeFromMonthly(.toLocaleNumber())
+
     $(this).closest('tr').remove()
 
     
@@ -90,10 +93,12 @@ function deleteEmployee() {
         // console.log(value);
 }
 
+
+// CALC for Monthly cost 
 function addToMonthly(salaryInput) {
     // take salary input
     console.log('in addToMonthly, value passed is', salaryInput);
-    // store in some vars
+    // store in some variables
     totalAnnualSalary += salaryInput
     // calculate total monthly
     totalMonthlySalary = totalAnnualSalary / 12
@@ -105,3 +110,15 @@ function addToMonthly(salaryInput) {
     $('#monthly-cost').text(totalMonthlySalary.toLocaleString("en-US"))
 }
 
+// needs connection
+function removeFromMonthly(removedSalary) {
+    console.log('in removeFromMonthly, value passed is:', removedSalary);
+    // update variables
+    totalAnnualSalary -= removedSalary
+    // calculate new total monthly
+    totalMonthlySalary = totalAnnualSalary / 12
+    // Tests math
+    console.log('totalAnnualSalary', totalAnnualSalary);
+    console.log('totalMonthlySalary', totalMonthlySalary);
+    $('#monthly-cost').text(totalMonthlySalary.toLocaleString("en-US"))
+}
