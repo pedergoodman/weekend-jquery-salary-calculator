@@ -13,72 +13,82 @@
         <h1>Salary Calculator</h1>
     </header>
     <main>
-        <form>
-            <input 
-            placeholder="First Name"
-            type="text"
-            id="input-first-name">
-            <input 
-            placeholder="Last Name"
-            type="text"
-            id="input-last-name">
-            <input 
-            placeholder="ID"
-            type="number"
-            id="input-employee-id">
-            <input 
-            placeholder="Job Title"
-            type="text"
-            id="input-job-title">
-            <input 
-            placeholder="Salary"
-            type="number"
-            id="input-salary">
-            <button id="submit-button">Submit</button>
-        </form>
-        <div>
-            <!-- container for $$$/month output -->
+        <!-- Input Form -->
+        <section>
+            <form>
+                <input 
+                placeholder="First Name"
+                type="text"
+                id="input-first-name">
+                <input 
+                placeholder="Last Name"
+                type="text"
+                id="input-last-name">
+                <input 
+                placeholder="ID"
+                type="number"
+                id="input-employee-id">
+                <input 
+                placeholder="Job Title"
+                type="text"
+                id="input-job-title">
+                <input 
+                placeholder="Salary"
+                type="number"
+                id="input-salary">
+                <button id="submit-button">Submit</button>
+            </form>
+        </section>
+        <!-- container for $$$/month output -->
+        <section>
+            <div>
+                <h3>Employees</h3>
+                <h3>Total Monthly: $<span id="monthly-cost">3,000,000</span></h3>
+            </div>
+        </section>
 
-        </div>
         <!-- Output to table  -->
-        <table>
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Employee ID</th>
-                    <th>Job Title</th>
-                    <th>Annual Salary</th>
-                    <td>Delete</td>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-                <tr>
-                    <td>Peder</td>
-                    <td>Goodman</td>
-                    <td>2003</td>
-                    <td>Wild Human</td>
-                    <td>$1,000,000</td>
-                    <td><button class="delete">Delete</button></td>
-                </tr>
-                <tr>
-                    <td>Corey</td>
-                    <td>Goodman</td>
-                    <td>2001</td>
-                    <td>Smart Human</td>
-                    <td>$1,000,000</td>
-                    <td><button class="delete">Delete</button></td>
-                </tr>
-                <tr>
-                    <td>Susan</td>
-                    <td>Goodman</td>
-                    <td>2004</td>
-                    <td>Super Human</td>
-                    <td>$1,000,000</td>
-                    <td><button class="delete">Delete</button></td>
-                </tr>
-            </tbody>
-        </table>
+        <section>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Employee ID</th>
+                        <th>Job Title</th>
+                        <th>Annual Salary</th>
+                        <td>Delete</td>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td class="first-name">Peder</td>
+                        <td class="table-last-name">Goodman</td>
+                        <td>2003</td>
+                        <td>Wild Human</td>
+                        <td class="table-salary">$1,000,000</td>
+                        <td><button class="delete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Corey</td>
+                        <td>Goodman</td>
+                        <td>2001</td>
+                        <td>Smart Human</td>
+                        <td>$1,000,000</td>
+                        <td><button class="delete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Susan</td>
+                        <td>Goodman</td>
+                        <td>2004</td>
+                        <td>Super Human</td>
+                        <td>$1,000,000</td>
+                        <td><button class="delete">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
     <footer>
 

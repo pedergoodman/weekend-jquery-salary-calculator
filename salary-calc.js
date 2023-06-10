@@ -1,5 +1,9 @@
 $(document).ready(onReady)
 
+let totalAnnualSalary = 0;
+let totalMonthlySalary = 0;
+
+
 function onReady() {
     console.log('hey js & jQ');
 
@@ -8,6 +12,9 @@ function onReady() {
 
     // delegated listener for delete button
     $('#table-body').on('click', '.delete', deleteEmployee)
+
+    // Listen for total monthly cost to go above 20K?
+    
 }
 
 
@@ -22,52 +29,79 @@ function onReady() {
 function addEmployee(event) {
     // event prevent
     event.preventDefault();
+    
     // console.log("inside addEmployee");
-    // capture form data
 
+    // grab form data
     let firstNameValue = $('#input-first-name').val()
     let lastNameValue = $('#input-last-name').val()
-    let employeeIdValue = $('#input-employee-id').val()
+    let employeeIdValue = +$('#input-employee-id').val()
     let jobTitleValue = $('#input-job-title').val()
-    let annualSalaryValue = $('#input-salary').val()
+    let annualSalaryValue = +$('#input-salary').val()
+    
+    // Grab Value Tests
+    console.log('firstNameValue is:', firstNameValue);
+    console.log('lastNameValue is:', lastNameValue);
+    console.log('employeeIdValue is:', employeeIdValue);
+    console.log('jobTitleValue is:', jobTitleValue);
+    console.log('annualSalaryValue is:', annualSalaryValue);
 
-// Grab Value Tests
-    // console.log('firstNameValue is:', firstNameValue);
-    // console.log('lastNameValue is:', lastNameValue);
-    // console.log('employeeIdValue is:', employeeIdValue);
-    // console.log('jobTitleValue is:', jobTitleValue);
-    // console.log('annualSalaryValue is:', annualSalaryValue);
-
-
-
-
-// todo
-    // send values to array
+    $('#table-body').append(`
+    <tr>
+    <td>${firstNameValue}</td>
+    <td>${lastNameValue}</td>
+    <td>${employeeIdValue}</td>
+    <td>${jobTitleValue}</td>
+    <td>$${annualSalaryValue.toLocaleString("en-US")}</td>
+    <td><button class="delete">Delete</button></td>
+    </tr>
+    `)
+    
+    
+    addToMonthly(annualSalaryValue);
+    
+    
+    
+    
+    
     //clear form
-
-$('#input-first-name').val('')
-$('#input-last-name').val('')
-$('#input-employee-id').val('')
-$('#input-job-title').val('')
-$('#input-salary').val('')
+    $('#input-first-name').val('')
+    $('#input-last-name').val('')
+    $('#input-employee-id').val('')
+    $('#input-job-title').val('')
+    $('#input-salary').val('')
 
 }
 
 function deleteEmployee() {
     console.log('inside deleteEmployee');
 
-    let value = $(this).closest('tr').remove()
+    let testVal = $(this).closest('.table-salary')
+    console.log(testVal);
 
+    $(this).closest('tr').remove()
 
-
+    
+    
     // I want to grab the employee id? 
-        // save for later
+    // save for later
+    // let firstNameValue = $(this).closest(tr).
         // let value = $(this).parent().parent()
         // console.log(value);
-
-
 }
 
+function addToMonthly(salaryInput) {
+    // take salary input
+    console.log('in addToMonthly, value passed is', salaryInput);
+    // store in some vars
+    totalAnnualSalary += salaryInput
+    // calculate total monthly
+    totalMonthlySalary = totalAnnualSalary / 12
+    // Tests math
+    // console.log('totalAnnualSalary', totalAnnualSalary);
+    // console.log('totalMonthlySalary', totalMonthlySalary);
+    
+    // append to DOM
+    $('#monthly-cost').text(totalMonthlySalary.toLocaleString("en-US"))
+}
 
-
-// 
