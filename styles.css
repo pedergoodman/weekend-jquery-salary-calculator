@@ -75,15 +75,14 @@ footer p {
 
 
 /* FORM ELEMENTS */
-div, h3 {
+div h3 {
     display: inline-block;
+    width: 60%;
 }
 
 #monthly-title {
-    display: inline-block;
-    position: relative;
-    /* float: right; */
-    text-align: right;
+    margin-left: 0px;
+    width: auto;
 
 }
 
