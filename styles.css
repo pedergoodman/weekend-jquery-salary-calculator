@@ -89,7 +89,6 @@ input {
 /* Table Global */
 table {
     width: 90%;
-    text-align: left;
     margin: auto;
 }
 
@@ -109,27 +108,27 @@ table {
 
 
 table, th, td {
-    /* border: 1px solid black; */
     border-spacing: 0;
     height: 1em;
+
 }
 
 td {
-    padding: 1.5em;
     border: 1px solid black;
+    margin: auto;
 }
 
 th {
-    text-align: center;
+    padding-left: 15px;
     padding-top: .5em;
     padding-bottom: .5em;
     border: 1px solid black;
+    text-align: left;
 }
 
 thead {
     background: var(--accent);
 }
-
 
 
 tbody tr:nth-child(odd) {
@@ -139,14 +138,29 @@ tbody tr:nth-child(even) {
     background: var(--secondary-button);
 }
 
-td button {
-    border-radius: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: inline-block;
+/* table justification */
+.left-justified {
+    padding-left: 10px;
+}
+
+.right-justified {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.center-justified {
     text-align: center;
+}
+
+
+
+td button {
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
     background-color: var(--secondary-button);
     transition-duration: .35s;
     color: var(--delete-button);

@@ -42,18 +42,23 @@ function addEmployee(event) {
 
   $("#table-body").append(`
     <tr>
-    <td>${firstNameValue}</td>
-    <td>${lastNameValue}</td>
-    <td>${employeeIdValue}</td>
-    <td>${jobTitleValue}</td>
-    <td>$<span class="table-salary">${annualSalaryValue.toLocaleString(
+    <td class="left-justified">${firstNameValue}</td>
+    <td class="left-justified">${lastNameValue}</td>
+    <td class="left-justified">${employeeIdValue}</td>
+    <td class="left-justified">${jobTitleValue}</td>
+    <td class="right-justified">$<span class="table-salary">${annualSalaryValue.toLocaleString(
       "en-US"
     )}</span></td>
-    <td><button class="delete">Delete</button></td>
+    <td class="center-justified"><button class="delete">Delete</button></td>
     </tr>
     `);
   // for got to add the class here for my testing....
-
+  
+  
+  
+  
+  
+  
   // store data??
   addToMonthly(annualSalaryValue);
 
