@@ -1,13 +1,14 @@
 
 :root {
-    --text: #010204;
-    --background: #e1eaf9;
-    --primary-button: #6a1633;
-    --secondary-button: #c4d4f3;
-    --accent: #336a16;
+    --text: #020403;
+    --background: #edf7f3;
+    --primary-button: #c5a6d8;
+    --primary-button-light: #e3dce8;
+    --secondary-button: #dcefe8;
+    --accent: #b9975f;
     
-    --delete-button: #b42c1d;
-    --lighter-accent: #dba7b9;
+    --delete-button: #b44f1d;
+    --lighter-accent: #ffefd5;
 }
 
 
@@ -24,7 +25,7 @@ body {
 }
 
 h3 {
-    margin-left: 50px;
+    margin-left: 70px;
     margin-bottom: 10px;
 }
 
@@ -55,7 +56,6 @@ footer {
     position: absolute;
     bottom: 0;
     margin-top: 60px;
-    clear: both;
 }
 
 
@@ -77,12 +77,13 @@ footer p {
 /* FORM ELEMENTS */
 div h3 {
     display: inline-block;
-    width: 60%;
 }
 
 #monthly-title {
     margin-left: 0px;
+    float: right;
     width: auto;
+    margin-right: 60px;
 
 }
 
@@ -99,7 +100,7 @@ input {
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: var(--secondary-button);
+    background-color: var(--background);
     margin-bottom: 5px;
     margin-right: 3px;
 }
@@ -110,7 +111,7 @@ input {
     padding-top: 10px;
     padding-bottom: 10px;
     
-    background-color: var(--lighter-accent);
+    background-color: var(--primary-button-light);
     border-radius: 16px;
     border-color: var(--primary-button);
     transition-duration: .4s;
@@ -118,8 +119,7 @@ input {
 
 #submit-button:hover {
     background-color: var(--primary-button);
-    color: var(--secondary-button);
-    border-radius: 100px;
+    color: var(--text);
     border-color: var(--text);
 }
 
@@ -173,11 +173,11 @@ thead {
 
 
 tbody tr:nth-child(odd) {
-    background: var(--background);
+    background: var(--secondary-button);
     margin-bottom: 100px;
 }
 tbody tr:nth-child(even) {
-    background: var(--secondary-button);
+    background: var(--lighter-accent);
 }
 
 /* table justification */
