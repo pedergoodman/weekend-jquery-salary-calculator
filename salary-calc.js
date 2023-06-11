@@ -136,6 +136,6 @@ function totalMonthlyBackground() {
     $("#monthly-cost").parent().css("background", "red");
   } else {
     console.log('changed bg to "green"');
-    $("#monthly-cost").parent().css("background", "green");
+    $("#monthly-cost").parent().css("background", "var(--background)");
   }
 } // end totalMonthlyBackground
