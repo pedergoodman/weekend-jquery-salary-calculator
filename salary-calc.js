@@ -125,10 +125,10 @@ function removeFromMonthly(removedSalary) {
 
 // checks if totalMonthlySalary > 20K
 function totalMonthlyBackground() {
-  if (totalMonthlySalary > 20000) {
+  if (totalMonthlySalary >= 20000) {
     // if greater than 20K, highlight red
     console.log('changed bg to "red"');
-    $("#monthly-cost").parent().css("background", "red");
+    $("#monthly-cost").parent().css("background", "#f64013");
   } else {
     console.log('changed bg to "green"');
     $("#monthly-cost").parent().css("background", "var(--background)");
