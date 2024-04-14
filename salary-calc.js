@@ -42,14 +42,14 @@ function addEmployee(event) {
 
   $("#table-body").append(`
     <tr>
-    <td class="left-justified">${firstNameValue}</td>
-    <td class="left-justified">${lastNameValue}</td>
-    <td class="left-justified">${employeeIdValue}</td>
-    <td class="left-justified">${jobTitleValue}</td>
-    <td class="right-justified">$<span class="table-salary">${annualSalaryValue.toLocaleString(
+    <td>${firstNameValue}</td>
+    <td>${lastNameValue}</td>
+    <td>${employeeIdValue}</td>
+    <td>${jobTitleValue}</td>
+    <td>$<span class="table-salary">${annualSalaryValue.toLocaleString(
       "en-US"
     )}</span></td>
-    <td class="center-justified"><button class="delete">Delete</button></td>
+    <td><button class="delete">Delete</button></td>
     </tr>
     `);
   // for got to add the class here for my testing....
@@ -125,12 +125,12 @@ function removeFromMonthly(removedSalary) {
 
 // checks if totalMonthlySalary > 20K
 function totalMonthlyBackground() {
-  if (totalMonthlySalary >= 20000) {
+  if (totalMonthlySalary > 20000) {
     // if greater than 20K, highlight red
     console.log('changed bg to "red"');
-    $("#monthly-cost").parent().css("background", "#f64013");
+    $("#monthly-cost").parent().css("background", "red");
   } else {
     console.log('changed bg to "green"');
-    $("#monthly-cost").parent().css("background", "var(--background)");
+    $("#monthly-cost").parent().css("background", "green");
   }
 } // end totalMonthlyBackground
